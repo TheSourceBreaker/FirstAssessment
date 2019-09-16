@@ -40,9 +40,7 @@ namespace StoreTA
 
 
             Console.WriteLine($"Well Hello {name}! and welcome to my Store!");
-            Console.WriteLine("We've Got three separate sections such as  the, 'Outfits' section, The 'Merch' section, and the 'GConsoles'" +
-                              " section!\n Or you can also ask about the 'StoreInfo'.");
-            Console.WriteLine("What are you looking for?");
+            
             
 
             Console.WriteLine();
@@ -52,32 +50,36 @@ namespace StoreTA
 
             while (gamerunning)
             {
-                string read = Console.ReadLine();
+                Console.WriteLine("\n\nWe've Got three separate sections such as  the, 'Outfits' section, The 'Merch' section, and the 'GConsoles'" +
+                              " section!\nOr you can also ask about the 'StoreInfo'.");
+                Console.WriteLine("What are you looking for?");
 
-                if(read == "StoreInfo")
+                string read = Console.ReadLine().ToLower();
+
+                if(read == "storeinfo")
                 {
                     Console.WriteLine();
                     StoreInfo storeInfo = new StoreInfo();
                     Console.WriteLine();
                 }
 
-                if (read == "Outfits")
+                if (read == "outfits")
                 {
 
                     Console.WriteLine();
                     Console.WriteLine("Ok which one of the three would you like?");
                     outfits1.PrintStock();
                     Console.WriteLine("the 'Jacket' costs 15 Coins, the 'Pants' cost 10 Coins, and the 'Shoes' cost 5 Coins.");
-                    Console.WriteLine("Or if you have a tax ticket, you could buy without paying tax by putting " +
-                                      "in your desired\n item's name with 'Tax' being right in front of it. \n");
-                    read = Console.ReadLine();
+                    Console.WriteLine("\nOr if you have a tax ticket, you could buy without paying tax by putting " +
+                                      "in your desired\n item's name with 'Tax' directly following it. \n");
+                    read = Console.ReadLine().ToLower();
 
-                    if(read.ToLower() == "exit")
+                    if(read == "exit")
                     {
                         gamerunning = false;
                     }
 
-                    if (read == "Jacket")
+                    else if (read == "jacket")
                     {
                         Console.WriteLine("");
                         outfits1.BuyJacket();
@@ -85,7 +87,7 @@ namespace StoreTA
                         Console.WriteLine($"What else would you like to buy, {name}?");
                     }
 
-                    if (read == "JacketTax")
+                    else if (read == "jackettax")
                     {
                         Console.WriteLine("");
                         outfits1.BuyJacketTax();
@@ -93,7 +95,7 @@ namespace StoreTA
                         Console.WriteLine($"What else would you like to buy, {name}?");
                     }
 
-                    if (read == "Pants")
+                    else if (read == "pants")
                     {
                         Console.WriteLine("");
                         outfits1.BuyPants();
@@ -101,7 +103,7 @@ namespace StoreTA
                         Console.WriteLine($"What else would you like to buy, {name}?");
                     }
 
-                    if (read == "PantsTax")
+                    else if (read == "pantstax")
                     {
                         Console.WriteLine("");
                         outfits1.BuyPantsTax();
@@ -109,7 +111,7 @@ namespace StoreTA
                         Console.WriteLine($"What else would you like to buy, {name}?");
                     }
 
-                    if (read == "Shoes")
+                    else if (read == "shoes")
                     {
                         Console.WriteLine("");
                         outfits1.BuyShoes();
@@ -117,17 +119,22 @@ namespace StoreTA
                         Console.WriteLine($"What else would you like to buy, {name}?");
                     }
 
-                    if (read == "ShoesTax")
+                    else if (read == "shoestax")
                     {
                         Console.WriteLine("");
                         outfits1.BuyShoesTax();
                         Console.WriteLine("");
                         Console.WriteLine($"What else would you like to buy, {name}?");
                     }
+
+                    else
+                    {
+                        Console.WriteLine("We don't have that here. Please choose something else.");
+                    }
                     
                 }
 
-                if (read == "Merch")
+                if (read == "merch")
                 {
                     Console.WriteLine();
                     Console.WriteLine("Ok which one of the three would you like? The GoldWatch, Scarf, or TopHat?");
@@ -135,14 +142,14 @@ namespace StoreTA
                     Console.WriteLine("the 'GoldWatch' costs 15 Coins, the 'Scarf' cost 10 Coins, and the 'TopHat' cost 10 Coins.");
                     Console.WriteLine("Or if you have a tax ticket, you could buy without paying tax by putting " +
                                       "in your desired\n item's name with 'Tax' being right in front of it. \n");
-                    read = Console.ReadLine();
+                    read = Console.ReadLine().ToLower();
 
-                    if (read == "Exit")
+                    if (read == "exit")
                     {
                         gamerunning = false;
                     }
 
-                    if (read == "GoldWatch")
+                    else if (read == "goldwatch")
                     {
                         Console.WriteLine("");
                         merch1.BuyGoldWatch();
@@ -150,7 +157,7 @@ namespace StoreTA
                         Console.WriteLine($"What else would you like to buy, {name}?");
                     }
 
-                    if (read == "GoldWatchTax")
+                    else if (read == "goldwatchtax")
                     {
                         Console.WriteLine("");
                         merch1.BuyGoldWatchTax();
@@ -158,7 +165,7 @@ namespace StoreTA
                         Console.WriteLine($"What else would you like to buy, {name}?");
                     }
 
-                    if (read == "Scarf")
+                    else if (read == "scarf")
                     {
                         Console.WriteLine("");
                         merch1.BuyScarf();
@@ -166,14 +173,14 @@ namespace StoreTA
                         Console.WriteLine($"What else would you like to buy, {name}?");
                     }
 
-                    if (read == "ScarfTax")
+                    else if (read == "scarftax")
                     {
                         Console.WriteLine("");
                         merch1.BuyScarfTax();
                         Console.WriteLine("");
                         Console.WriteLine($"What else would you like to buy, {name}?");
                     }
-                    if (read == "TopHat")
+                    else if (read == "tophat")
                     {
                         Console.WriteLine("");
                         merch1.BuyTopHat();
@@ -181,16 +188,21 @@ namespace StoreTA
                         Console.WriteLine($"What else would you like to buy, {name}?");
                     }
 
-                    if (read == "TopHatTax")
+                    else if (read == "tophattax")
                     {
                         Console.WriteLine("");
                         merch1.BuyTopHatTax();
                         Console.WriteLine("");
                         Console.WriteLine($"What else would you like to buy, {name}?");
                     }
+
+                    else
+                    {
+                        Console.WriteLine("We don't have that here. Please choose something else.");
+                    }
                 }
 
-                if (read == "GConsole")
+                if (read == "gconsole")
                 {
                     Console.WriteLine();
                     Console.WriteLine("Ok which one of the three would you like? The PS3, Xbox360, or Wii?");
@@ -198,14 +210,14 @@ namespace StoreTA
                     Console.WriteLine("the 'PS3' costs 20 Coins, the 'Xbox360' cost 25 Coins, and the 'Wii' cost 20 Coins.");
                     Console.WriteLine("Or if you have a tax ticket, you could buy without paying tax by putting " +
                                       "in your desired\n item's name with 'Tax' being right in front of it. \n");
-                    read = Console.ReadLine();
+                    read = Console.ReadLine().ToLower();
 
-                    if (read == "Exit")
+                    if (read == "exit")
                     {
                         gamerunning = false;
                     }
 
-                    if (read == "PS3")
+                    else if (read == "ps3")
                     {
                         Console.WriteLine("");
                         console1.BuyPS3();
@@ -213,7 +225,7 @@ namespace StoreTA
                         Console.WriteLine($"What else would you like to buy, {name}?");
                     }
 
-                    if (read == "PS3Tax")
+                    else if (read == "ps3tax")
                     {
                         Console.WriteLine("");
                         console1.BuyPS3Tax();
@@ -221,7 +233,7 @@ namespace StoreTA
                         Console.WriteLine($"What else would you like to buy, {name}?");
                     }
 
-                    if (read == "Xbox360")
+                    else if (read == "xbox360")
                     {
                         Console.WriteLine("");
                         console1.BuyXbox();
@@ -229,7 +241,7 @@ namespace StoreTA
                         Console.WriteLine($"What else would you like to buy, {name}?");
                     }
 
-                    if (read == "Xbox360Tax")
+                    else if (read == "xbox360tax")
                     {
                         Console.WriteLine("");
                         console1.BuyXboxTax();
@@ -237,7 +249,7 @@ namespace StoreTA
                         Console.WriteLine($"What else would you like to buy, {name}?");
                     }
 
-                    if (read == "Wii")
+                    else if (read == "wii")
                     {
                         Console.WriteLine("");
                         console1.BuyWii();
@@ -245,12 +257,17 @@ namespace StoreTA
                         Console.WriteLine($"What else would you like to buy, {name}?");
                     }
 
-                    if (read == "WiiTax")
+                    else if (read == "wiitax")
                     {
                         Console.WriteLine("");
                         console1.BuyWiiTax();
                         Console.WriteLine("");
                         Console.WriteLine($"What else would you like to buy, {name}?");
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("We don't have that here. Please choose something else.");
                     }
 
                 }

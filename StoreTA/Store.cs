@@ -8,7 +8,7 @@ namespace StoreTA
 {
     public class Store              //This place contains the Aggregation method, yup the entire thing(Store and TaxSystem).
     {
-        public static int storeMoney = 40;
+        public static int storeMoney = 300;
 
         //public static int storeRestock;
         //public static int Tax = 3;
@@ -53,7 +53,7 @@ namespace StoreTA
             storeYear = 1983;
             storeOwner = "Source";
             storeName = "ThriftStore";
-            Console.WriteLine($"The name of the establishment goes by {storeName}, it was created in the year of {storeYear} by the current owner {storeOwner}. For an old store like this, it's still considered to be in rather {storeCondition} condition.");
+            Console.WriteLine($"The name of the establishment goes by {storeName}, it was created in the year of {storeYear} by the current owner {storeOwner}. \nFor an old store like this, it's still considered to be in rather {storeCondition} condition.");
         }
         public StoreInfo(string name, int year, string owner, string condition)
         {
@@ -61,7 +61,7 @@ namespace StoreTA
             storeYear = year;
             storeCondition = condition;
             storeOwner = owner;
-            Console.WriteLine($"The name of the establishment goes by {storeName}, it was created in the year of {storeYear} by the current owner {storeOwner}. For an old store like this, it's still considered to be in rather {storeCondition} condition.");
+            Console.WriteLine($"The name of the establishment goes by {storeName}, it was created in the year of {storeYear} by the current owner {storeOwner}. \nFor an old store like this, it's still considered to be in rather {storeCondition} condition.");
         }
       
 

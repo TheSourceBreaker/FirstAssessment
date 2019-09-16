@@ -8,7 +8,7 @@ namespace StoreTA
 {
     public class Player
     {
-        public static int playerMoney = 40;
+        public static int playerMoney = 60;
         public static int pocketSpace = 4;
         public static int currentItems = 0;
         public static int taxTicket = 1;
