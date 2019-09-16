@@ -21,7 +21,7 @@ namespace StoreTA
             name = streamReader.ReadLine();
 
 
-            Console.WriteLine("What's your name dear customer?");
+            Console.WriteLine("What's your name, dear customer?");
 
             name = Console.ReadLine();
 
@@ -67,12 +67,12 @@ namespace StoreTA
                     Console.WriteLine();
                     Console.WriteLine("Ok which one of the three would you like?");
                     outfits1.PrintStock();
-                    Console.WriteLine($"the 'Jacket' costs {15} Coins, the 'Pants' cost {10} Coins, and the 'Shoes' cost {5} Coins.");
+                    Console.WriteLine("the 'Jacket' costs 15 Coins, the 'Pants' cost 10 Coins, and the 'Shoes' cost 5 Coins.");
                     Console.WriteLine("Or if you have a tax ticket, you could buy without paying tax by putting " +
                                       "in your desired\n item's name with 'Tax' being right in front of it. \n");
                     read = Console.ReadLine();
 
-                    if(read == "Exit")
+                    if(read.ToLower() == "exit")
                     {
                         gamerunning = false;
                     }
@@ -132,7 +132,7 @@ namespace StoreTA
                     Console.WriteLine();
                     Console.WriteLine("Ok which one of the three would you like? The GoldWatch, Scarf, or TopHat?");
                     merch1.PrintStock();
-                    Console.WriteLine($"the 'GoldWatch' costs {15} Coins, the 'Scarf' cost {10} Coins, and the 'TopHat' cost {10} Coins.");
+                    Console.WriteLine("the 'GoldWatch' costs 15 Coins, the 'Scarf' cost 10 Coins, and the 'TopHat' cost 10 Coins.");
                     Console.WriteLine("Or if you have a tax ticket, you could buy without paying tax by putting " +
                                       "in your desired\n item's name with 'Tax' being right in front of it. \n");
                     read = Console.ReadLine();
@@ -195,7 +195,7 @@ namespace StoreTA
                     Console.WriteLine();
                     Console.WriteLine("Ok which one of the three would you like? The PS3, Xbox360, or Wii?");
                     console1.PrintStock();
-                    Console.WriteLine($"the 'PS3' costs {20} Coins, the 'Xbox360' cost {25} Coins, and the 'Wii' cost {20} Coins.");
+                    Console.WriteLine("the 'PS3' costs 20 Coins, the 'Xbox360' cost 25 Coins, and the 'Wii' cost 20 Coins.");
                     Console.WriteLine("Or if you have a tax ticket, you could buy without paying tax by putting " +
                                       "in your desired\n item's name with 'Tax' being right in front of it. \n");
                     read = Console.ReadLine();

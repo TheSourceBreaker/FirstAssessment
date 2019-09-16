@@ -66,21 +66,19 @@ namespace StoreTA
                 {
 
 
-                    Console.WriteLine($"Great! That'll be {10} Dollars plus {3} more in Tax, Here is your Pants");
+                    Console.WriteLine("Great! That'll be 10 Dollars plus 3 more in Tax, Here is your Pants");
                     //error message not enough money
                     Player.taxTicket++;
-                    Store.storeSpace++;
-                    Store.storeMoney++;
+                    Store.storeMoney += 13;
                     Player.currentItems++;
                     Player.pocketSpace--;
-                    Player.playerMoney--;
+                    Player.playerMoney -= 13;
                     stock[1]--;
                     Console.WriteLine($"You have {Player.playerMoney} Dollars.");
                     Console.WriteLine($"You have {Player.currentItems} items in your inventory. ");
                     Console.WriteLine($"You have {Player.pocketSpace} Pocket Space left. ");
                     Console.WriteLine($"You have {Player.taxTicket} Tickets.");
                     Console.WriteLine($"The Store contains {Store.storeMoney} Dollars.");
-                    Console.WriteLine($"The Store contains {Store.storeSpace} Storage Space left. ");
                     Console.WriteLine($"Thanks for the purchase!");
                 }
                 else
@@ -109,21 +107,19 @@ namespace StoreTA
 
 
 
-                        Console.WriteLine($"Great! That'll be {10} Dollars, Here is your Pants");
+                        Console.WriteLine("Great! That'll be 10 Dollars, Here is your Pants");
                         //error message not enough money
                         Player.taxTicket--;
-                        Store.storeSpace++;
-                        Store.storeMoney++;
+                        Store.storeMoney += 10;
                         Player.currentItems++;
                         Player.pocketSpace--;
-                        Player.playerMoney--;
+                        Player.playerMoney -= 10;
                         stock[1]--;
                         Console.WriteLine($"You have {Player.playerMoney} Dollars.");
                         Console.WriteLine($"You have {Player.currentItems} items in your inventory. ");
                         Console.WriteLine($"You have {Player.pocketSpace} Pocket Space left. ");
                         Console.WriteLine($"You have {Player.taxTicket} Tickets.");
                         Console.WriteLine($"The Store contains {Store.storeMoney} Dollars.");
-                        Console.WriteLine($"The Store contains {Store.storeSpace} Storage Space left. ");
                         Console.WriteLine($"Thanks for the purchase!");
                     }
                     else
@@ -160,21 +156,19 @@ namespace StoreTA
                 {
 
 
-                    Console.WriteLine($"Great! That'll be {15} Dollars plus {2} more in Tax, Here is your Jacket!");
+                    Console.WriteLine("Great! That'll be 15 Dollars plus 2 more in Tax, Here is your Jacket!");
                     //error message not enough money
                     Player.taxTicket++;
-                    Store.storeSpace++;
-                    Store.storeMoney++;
+                    Store.storeMoney += 17;
                     Player.currentItems++;
                     Player.pocketSpace--;
-                    Player.playerMoney--;
+                    Player.playerMoney -= 17;
                     stock[0]--;
                     Console.WriteLine($"You have {Player.playerMoney} Dollars.");
                     Console.WriteLine($"You have {Player.currentItems} items in your inventory. ");
                     Console.WriteLine($"You have {Player.pocketSpace} Pocket Space left. ");
                     Console.WriteLine($"You have {Player.taxTicket} Tickets.");
                     Console.WriteLine($"The Store contains {Store.storeMoney} Dollars.");
-                    Console.WriteLine($"The Store contains {Store.storeSpace} Storage Space left. ");
                     Console.WriteLine($"Thanks for the purchase!");
                 }
                 else
@@ -199,21 +193,19 @@ namespace StoreTA
                     {
 
 
-                        Console.WriteLine($"Ok that will be {15} Dollars.");
+                        Console.WriteLine("Ok that will be 15 Dollars.");
                         //error message not enough money
                         Player.taxTicket--;
-                        Store.storeSpace++;
-                        Store.storeMoney++;
+                        Store.storeMoney += 15;
                         Player.currentItems++;
                         Player.pocketSpace--;
-                        Player.playerMoney--;
+                        Player.playerMoney -= 15;
                         stock[0]--;
                         Console.WriteLine($"You have {Player.playerMoney} Dollars.");
                         Console.WriteLine($"You have {Player.currentItems} items in your inventory. ");
                         Console.WriteLine($"You have {Player.pocketSpace} Pocket Space left. ");
                         Console.WriteLine($"You have {Player.taxTicket} Tickets.");
                         Console.WriteLine($"The Store contains {Store.storeMoney} Dollars.");
-                        Console.WriteLine($"The Store contains {Store.storeSpace} Storage Space left. ");
                         Console.WriteLine($"Thanks for the purchase!");
                     }
                     else
@@ -249,12 +241,11 @@ namespace StoreTA
 
 
 
-                    Console.WriteLine($"Great! That'll be {5} Dollars plus {4} more in Tax");
+                    Console.WriteLine("Great! That'll be 5 Dollars plus 4 more in Tax");
                     Player.taxTicket++;
-                    Store.storeSpace++;
-                    Store.storeMoney++;
+                    Store.storeMoney += 9;
                     stock[2]--;
-                    Player.playerMoney--;
+                    Player.playerMoney -= 9;
                     Player.currentItems++;
                     Player.pocketSpace--;
                     Console.WriteLine($"You have {Player.playerMoney} Dollars.");
@@ -262,7 +253,6 @@ namespace StoreTA
                     Console.WriteLine($"You have {Player.pocketSpace} Pocket Space left. ");
                     Console.WriteLine($"You have {Player.taxTicket} Tickets.");
                     Console.WriteLine($"The Store contains {Store.storeMoney} Dollars.");
-                    Console.WriteLine($"The Store contains {Store.storeSpace} Storage Space left. ");
                     Console.WriteLine($"Thanks for the purchase!");
                 }
                 else
@@ -287,12 +277,11 @@ namespace StoreTA
                     {
 
 
-                        Console.WriteLine($"Ok that will be {5} Dollars.");
+                        Console.WriteLine("Ok that will be 5 Dollars.");
                         Player.taxTicket--;
-                        Store.storeSpace++;
-                        Store.storeMoney++;
+                        Store.storeMoney += 5;
                         stock[2]--;
-                        Player.playerMoney--;
+                        Player.playerMoney -= 5;
                         Player.currentItems++;
                         Player.pocketSpace--;
                         Console.WriteLine($"You have {Player.playerMoney} Dollars.");
@@ -300,7 +289,6 @@ namespace StoreTA
                         Console.WriteLine($"You have {Player.pocketSpace} Pocket Space left. ");
                         Console.WriteLine($"You have {Player.taxTicket} Tickets.");
                         Console.WriteLine($"The Store contains {Store.storeMoney} Dollars.");
-                        Console.WriteLine($"The Store contains {Store.storeSpace} Storage Space left. ");
                         Console.WriteLine($"Thanks for the purchase!");
                     }
                     else
@@ -360,12 +348,11 @@ namespace StoreTA
                 {
 
 
-                    Console.WriteLine($"Great! That'll be {15} Dollars plus {2} more in Tax");
+                    Console.WriteLine("Great! That'll be 15 Dollars plus 2 more in Tax");
                     Player.taxTicket++;
-                    Store.storeSpace++;
-                    Store.storeMoney++;
+                    Store.storeMoney += 17;
                     stock[3]--;
-                    Player.playerMoney--;
+                    Player.playerMoney -= 17;
                     Player.currentItems++;
                     Player.pocketSpace--;
                     Console.WriteLine($"You have {Player.playerMoney} Dollars.");
@@ -373,7 +360,6 @@ namespace StoreTA
                     Console.WriteLine($"You have {Player.pocketSpace} Pocket Space left. ");
                     Console.WriteLine($"You have {Player.taxTicket} Tickets.");
                     Console.WriteLine($"The Store contains {Store.storeMoney} Dollars.");
-                    Console.WriteLine($"The Store contains {Store.storeSpace} Storage Space left. ");
                     Console.WriteLine($"Thanks for the purchase!");
                 }
                 else
@@ -398,12 +384,11 @@ namespace StoreTA
                     {
 
 
-                        Console.WriteLine($"Ok that will be {15} Dollars.");
+                        Console.WriteLine("Ok that will be 15 Dollars.");
                         Player.taxTicket--;
-                        Store.storeSpace++;
-                        Store.storeMoney++;
+                        Store.storeMoney += 15;
                         stock[3]--;
-                        Player.playerMoney--;
+                        Player.playerMoney -= 15;
                         Player.currentItems++;
                         Player.pocketSpace--;
                         Console.WriteLine($"You have {Player.playerMoney} Dollars.");
@@ -411,7 +396,6 @@ namespace StoreTA
                         Console.WriteLine($"You have {Player.pocketSpace} Pocket Space left. ");
                         Console.WriteLine($"You have {Player.taxTicket} Tickets.");
                         Console.WriteLine($"The Store contains {Store.storeMoney} Dollars.");
-                        Console.WriteLine($"The Store contains {Store.storeSpace} Storage Space left. ");
                         Console.WriteLine($"Thanks for the purchase!");
                     }
                     else
@@ -447,12 +431,11 @@ namespace StoreTA
                 {
 
 
-                    Console.WriteLine($"Great! That'll be {10} Dollars plus {3} more in Tax");
+                    Console.WriteLine("Great! That'll be 10 Dollars plus 3 more in Tax");
                     Player.taxTicket++;
-                    Store.storeSpace++;
-                    Store.storeMoney++;
+                    Store.storeMoney += 13;
                     stock[4]--;
-                    Player.playerMoney--;
+                    Player.playerMoney -= 13;
                     Player.currentItems++;
                     Player.pocketSpace--;
                     Console.WriteLine($"You have {Player.playerMoney} Dollars.");
@@ -460,7 +443,6 @@ namespace StoreTA
                     Console.WriteLine($"You have {Player.pocketSpace} Pocket Space left. ");
                     Console.WriteLine($"You have {Player.taxTicket} Tickets.");
                     Console.WriteLine($"The Store contains {Store.storeMoney} Dollars.");
-                    Console.WriteLine($"The Store contains {Store.storeSpace} Storage Space left. ");
                     Console.WriteLine($"Thanks for the purchase!");
                 }
                 else
@@ -486,12 +468,11 @@ namespace StoreTA
                     {
 
 
-                        Console.WriteLine($"Ok that will be {10} Dollars.");
+                        Console.WriteLine("Ok that will be 10 Dollars.");
                         Player.taxTicket--;
-                        Store.storeSpace++;
-                        Store.storeMoney++;
+                        Store.storeMoney += 10;
                         stock[4]--;
-                        Player.playerMoney--;
+                        Player.playerMoney -= 10;
                         Player.currentItems++;
                         Player.pocketSpace--;
                         Console.WriteLine($"You have {Player.playerMoney} Dollars.");
@@ -499,7 +480,6 @@ namespace StoreTA
                         Console.WriteLine($"You have {Player.pocketSpace} Pocket Space left. ");
                         Console.WriteLine($"You have {Player.taxTicket} Tickets.");
                         Console.WriteLine($"The Store contains {Store.storeMoney} Dollars.");
-                        Console.WriteLine($"The Store contains {Store.storeSpace} Storage Space left. ");
                         Console.WriteLine($"Thanks for the purchase!");
                     }
                     else
@@ -534,12 +514,11 @@ namespace StoreTA
                 {
 
 
-                    Console.WriteLine($"Great! That'll be {10} Dollars plus {4} more in Tax");
+                    Console.WriteLine("Great! That'll be 10 Dollars plus 4 more in Tax");
                     Player.taxTicket++;
-                    Store.storeSpace++;
-                    Store.storeMoney++;
+                    Store.storeMoney += 14;
                     stock[5]--;
-                    Player.playerMoney--;
+                    Player.playerMoney -= 14;
                     Player.currentItems++;
                     Player.pocketSpace--;
                     Console.WriteLine($"You have {Player.playerMoney} Dollars.");
@@ -547,7 +526,6 @@ namespace StoreTA
                     Console.WriteLine($"You have {Player.pocketSpace} Pocket Space left. ");
                     Console.WriteLine($"You have {Player.taxTicket} Tickets.");
                     Console.WriteLine($"The Store contains {Store.storeMoney} Dollars.");
-                    Console.WriteLine($"The Store contains {Store.storeSpace} Storage Space left. ");
                     Console.WriteLine($"Thanks for the purchase!");
                 }
                 else
@@ -573,12 +551,11 @@ namespace StoreTA
                     {
 
 
-                        Console.WriteLine($"Ok that will be {10} Dollars.");
+                        Console.WriteLine("Ok that will be 10 Dollars.");
                         Player.taxTicket--;
-                        Store.storeSpace++;
-                        Store.storeMoney++;
+                        Store.storeMoney += 10;
                         stock[5]--;
-                        Player.playerMoney--;
+                        Player.playerMoney -= 10;
                         Player.currentItems++;
                         Player.pocketSpace--;
                         Console.WriteLine($"You have {Player.playerMoney} Dollars.");
@@ -586,7 +563,6 @@ namespace StoreTA
                         Console.WriteLine($"You have {Player.pocketSpace} Pocket Space left. ");
                         Console.WriteLine($"You have {Player.taxTicket} Tickets.");
                         Console.WriteLine($"The Store contains {Store.storeMoney} Dollars.");
-                        Console.WriteLine($"The Store contains {Store.storeSpace} Storage Space left. ");
                         Console.WriteLine($"Thanks for the purchase!");
                     }
                     else
@@ -643,12 +619,11 @@ namespace StoreTA
                 {
 
 
-                    Console.WriteLine($"Great! That'll be {20} Dollars plus {2} more in Tax");
+                    Console.WriteLine("Great! That'll be 20 Dollars plus 2 more in Tax");
                     Player.taxTicket++;
-                    Store.storeSpace++;
-                    Store.storeMoney++;
+                    Store.storeMoney += 22;
                     stock[6]--;
-                    Player.playerMoney--;
+                    Player.playerMoney -= 22;
                     Player.currentItems++;
                     Player.pocketSpace--;
                     Console.WriteLine($"You have {Player.playerMoney} Dollars.");
@@ -656,7 +631,6 @@ namespace StoreTA
                     Console.WriteLine($"You have {Player.pocketSpace} Pocket Space left. ");
                     Console.WriteLine($"You have {Player.taxTicket} Tickets.");
                     Console.WriteLine($"The Store contains {Store.storeMoney} Dollars.");
-                    Console.WriteLine($"The Store contains {Store.storeSpace} Storage Space left. ");
                     Console.WriteLine($"Thanks for the purchase!");
                 }
                 else
@@ -682,12 +656,11 @@ namespace StoreTA
                     {
 
 
-                        Console.WriteLine($"Ok that will be {20} Dollars.");
+                        Console.WriteLine("Ok that will be 20 Dollars.");
                         Player.taxTicket--;
-                        Store.storeSpace++;
-                        Store.storeMoney++;
+                        Store.storeMoney += 20;
                         stock[6]--;
-                        Player.playerMoney--;
+                        Player.playerMoney -= 20;
                         Player.currentItems++;
                         Player.pocketSpace--;
                         Console.WriteLine($"You have {Player.playerMoney} Dollars.");
@@ -695,7 +668,6 @@ namespace StoreTA
                         Console.WriteLine($"You have {Player.pocketSpace} Pocket Space left. ");
                         Console.WriteLine($"You have {Player.taxTicket} Tickets.");
                         Console.WriteLine($"The Store contains {Store.storeMoney} Dollars.");
-                        Console.WriteLine($"The Store contains {Store.storeSpace} Storage Space left. ");
                         Console.WriteLine($"Thanks for the purchase!");
                     }
                     else
@@ -730,12 +702,11 @@ namespace StoreTA
                 {
 
 
-                    Console.WriteLine($"Great! That'll be {25} Dollars plus {3} more in Tax");
+                    Console.WriteLine("Great! That'll be 25 Dollars plus 3 more in Tax");
                     Player.taxTicket++;
-                    Store.storeSpace++;
-                    Store.storeMoney++;
+                    Store.storeMoney += 28;
                     stock[7]--;
-                    Player.playerMoney--;
+                    Player.playerMoney -= 28;
                     Player.currentItems++;
                     Player.pocketSpace--;
                     Console.WriteLine($"You have {Player.playerMoney} Dollars.");
@@ -743,7 +714,6 @@ namespace StoreTA
                     Console.WriteLine($"You have {Player.pocketSpace} Pocket Space left. ");
                     Console.WriteLine($"You have {Player.taxTicket} Tickets.");
                     Console.WriteLine($"The Store contains {Store.storeMoney} Dollars.");
-                    Console.WriteLine($"The Store contains {Store.storeSpace} Storage Space left. ");
                     Console.WriteLine($"Thanks for the purchase!");
                 }
                 else
@@ -769,12 +739,11 @@ namespace StoreTA
                     {
 
 
-                        Console.WriteLine($"Ok that will be {25} Dollars.");
+                        Console.WriteLine("Ok that will be 25 Dollars.");
                         Player.taxTicket--;
-                        Store.storeSpace++;
-                        Store.storeMoney++;
+                        Store.storeMoney += 25;
                         stock[7]--;
-                        Player.playerMoney--;
+                        Player.playerMoney -= 25;
                         Player.currentItems++;
                         Player.pocketSpace--;
                         Console.WriteLine($"You have {Player.playerMoney} Dollars.");
@@ -782,7 +751,6 @@ namespace StoreTA
                         Console.WriteLine($"You have {Player.pocketSpace} Pocket Space left. ");
                         Console.WriteLine($"You have {Player.taxTicket} Tickets.");
                         Console.WriteLine($"The Store contains {Store.storeMoney} Dollars.");
-                        Console.WriteLine($"The Store contains {Store.storeSpace} Storage Space left. ");
                         Console.WriteLine($"Thanks for the purchase!");
                     }
                     else
@@ -817,12 +785,11 @@ namespace StoreTA
                 {
 
 
-                    Console.WriteLine($"Great! That'll be {20} Dollars plus {4} more in Tax");
+                    Console.WriteLine("Great! That'll be 20 Dollars plus 4 more in Tax");
                     Player.taxTicket++;
-                    Store.storeSpace++;
-                    Store.storeMoney++;
+                    Store.storeMoney += 24;
                     stock[8]--;
-                    Player.playerMoney--;
+                    Player.playerMoney -= 24;
                     Player.currentItems++;
                     Player.pocketSpace--;
                     Console.WriteLine($"You have {Player.playerMoney} Dollars.");
@@ -830,7 +797,6 @@ namespace StoreTA
                     Console.WriteLine($"You have {Player.pocketSpace} Pocket Space left. ");
                     Console.WriteLine($"You have {Player.taxTicket} Tickets.");
                     Console.WriteLine($"The Store contains {Store.storeMoney} Dollars.");
-                    Console.WriteLine($"The Store contains {Store.storeSpace} Storage Space left. ");
                     Console.WriteLine($"Thanks for the purchase!");
                 }
                 else
@@ -856,12 +822,11 @@ namespace StoreTA
                     {
 
 
-                        Console.WriteLine($"Ok that will be {20} Dollars.");
+                        Console.WriteLine("Ok that will be 20 Dollars.");
                         Player.taxTicket--;
-                        Store.storeSpace++;
-                        Store.storeMoney++;
+                        Store.storeMoney += 20;
                         stock[8]--;
-                        Player.playerMoney--;
+                        Player.playerMoney -= 20;
                         Player.currentItems++;
                         Player.pocketSpace--;
                         Console.WriteLine($"You have {Player.playerMoney} Dollars.");
@@ -869,7 +834,6 @@ namespace StoreTA
                         Console.WriteLine($"You have {Player.pocketSpace} Pocket Space left. ");
                         Console.WriteLine($"You have {Player.taxTicket} Tickets.");
                         Console.WriteLine($"The Store contains {Store.storeMoney} Dollars.");
-                        Console.WriteLine($"The Store contains {Store.storeSpace} Storage Space left. ");
                         Console.WriteLine($"Thanks for the purchase!");
                     }
                     else

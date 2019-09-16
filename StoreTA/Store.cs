@@ -9,7 +9,6 @@ namespace StoreTA
     public class Store              //This place contains the Aggregation method, yup the entire thing(Store and TaxSystem).
     {
         public static int storeMoney = 40;
-        public static int storeSpace = 4;
 
         //public static int storeRestock;
         //public static int Tax = 3;
@@ -44,25 +43,25 @@ namespace StoreTA
 
     public class StoreInfo      
     {
-        public static int storeMoney;
-        public static int storeSpace;
-        public static bool storeTax;
+        public static string storeCondition;
+        public static int storeYear;
+        public static string storeOwner;
         public static string storeName;
         public StoreInfo()
         {
-            storeMoney = 40;
-            storeSpace = 4;
-            storeTax = true;
+            storeCondition = "Sturdy";
+            storeYear = 1983;
+            storeOwner = "Source";
             storeName = "ThriftStore";
-            Console.WriteLine($"The name of the establishment goes by {storeName} and its resizable space of {storeSpace}.\n The store currently has {storeMoney} Coins who's tax system is {storeTax}. ");
+            Console.WriteLine($"The name of the establishment goes by {storeName}, it was created in the year of {storeYear} by the current owner {storeOwner}. For an old store like this, it's still considered to be in rather {storeCondition} condition.");
         }
-        public StoreInfo(string name, int space, int cash, bool tax)
+        public StoreInfo(string name, int year, string owner, string condition)
         {
             storeName = name;
-            storeSpace = space;
-            storeMoney = cash;
-            storeTax = tax;
-            Console.WriteLine($"The name of the establishment goes by {storeName} and its resizable space of {storeSpace}.\n The store currently has {storeMoney} Coins who's tax system is {storeTax}. ");
+            storeYear = year;
+            storeCondition = condition;
+            storeOwner = owner;
+            Console.WriteLine($"The name of the establishment goes by {storeName}, it was created in the year of {storeYear} by the current owner {storeOwner}. For an old store like this, it's still considered to be in rather {storeCondition} condition.");
         }
       
 
