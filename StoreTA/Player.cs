@@ -12,7 +12,5 @@ namespace StoreTA
         public static int pocketSpace = 4;
         public static int currentItems = 0;
         public static int taxTicket = 1;
-
     }
-
 }

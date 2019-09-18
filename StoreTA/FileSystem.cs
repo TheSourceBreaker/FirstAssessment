@@ -9,11 +9,5 @@ namespace StoreTA
 {
     class File
     {
-
-        
-
-   
-            
     }
-
 }

@@ -10,27 +10,20 @@ namespace StoreTA
     {
         protected int[] stock = new int[9]; //Regular Array with the bag set to int. Protected vars can also be accessed by the children.
                                             // This also declares the vars.
-
         protected TaxSystem taxsystem1 = new TaxSystem();
 
         virtual public void PrintStock() //This is connected to the other children along with the Array above, Also this is another way of calling it Polymorphism.
         {                                //The use of override is Polymorphism, its purpose is to make Parent-Child relationships be more in reach. 
-
         }
-
-
     }
-
 
     class Outfits : CurrentStock //A child can be the parent of a child.
     {
-
         public Outfits() //This Constructor initiates the Array's vars by giving them a number.
         {
             stock[0] = 5;//jackets
             stock[1] = 3;//pants
             stock[2] = 4;//shoes
-
         }
 
         public Outfits(int _jacket, int _pants, int _shoes) //This constructor inits the vars but doesn't give it a number, doing this  
@@ -48,32 +41,31 @@ namespace StoreTA
         }
 
         override public void PrintStock() //This void is an override for the other "PrintStock" at the "CurrentStock" class.
-        {                    //Consider a Bowl(void) for each Dog(child), the Owner(parent) procceeds to refill the Bowls for all 3 Dogs.
+        {                                 //Consider a Bowl(void) for each Dog(child), the Owner(parent) procceeds to refill the Bowls for all 3 Dogs.
             Console.WriteLine($"Jackets in stock: {stock[0]}"); //for all 3 Dogs.
             Console.WriteLine($"Pants in stock: {stock[1]}");
             Console.WriteLine($"Shoes in stock: {stock[2]}");
-
         }
 
         public void BuyPants()
         {
-
             //do stuff to choose pants
             //confirm purchase
             if (Player.playerMoney >= 10 + taxsystem1.Tax[1])//check price vs player money          
             {
                 if (Player.pocketSpace > 0)
                 {
-
-
                     Console.WriteLine("Great! That'll be 10 Dollars plus 3 more in Tax, Here is your Pants");
+
                     //error message not enough money
                     Player.taxTicket++;
                     Store.storeMoney += 13;
                     Player.currentItems++;
                     Player.pocketSpace--;
                     Player.playerMoney -= 13;
+
                     stock[1]--;
+
                     Console.WriteLine($"You have {Player.playerMoney} Dollars.");
                     Console.WriteLine($"You have {Player.currentItems} items in your inventory. ");
                     Console.WriteLine($"You have {Player.pocketSpace} Pocket Space left. ");
@@ -84,18 +76,19 @@ namespace StoreTA
                 else
                 {
                     Console.WriteLine("Seems like your already carrying too much at the moment.");
+
                     return;
                 }
             }
             else
             {
                 Console.WriteLine("Sorry, but you don't have enough to buy this.");
+
                 return;
             }
         }
         public void BuyPantsTax()
         {
-
             //do stuff to choose pants
             //confirm purchase
             if (Player.playerMoney >= 10)//check price vs player money
@@ -104,17 +97,17 @@ namespace StoreTA
                 {
                     if (Player.pocketSpace > 0)
                     {
-
-
-
                         Console.WriteLine("Great! That'll be 10 Dollars, Here is your Pants");
+
                         //error message not enough money
                         Player.taxTicket--;
                         Store.storeMoney += 10;
                         Player.currentItems++;
                         Player.pocketSpace--;
                         Player.playerMoney -= 10;
+
                         stock[1]--;
+
                         Console.WriteLine($"You have {Player.playerMoney} Dollars.");
                         Console.WriteLine($"You have {Player.currentItems} items in your inventory. ");
                         Console.WriteLine($"You have {Player.pocketSpace} Pocket Space left. ");
@@ -125,21 +118,23 @@ namespace StoreTA
                     else
                     {
                         Console.WriteLine("Seems like your already carrying too much at the moment.");
+
                         return;
                     }
                 }
                 else
                 {
                     Console.WriteLine("Sorry, but you don't have any tickets to use. Purchase anything with tax to receive a free ticket.");
+
                     return;
                 }
             }
             else
             {
                 Console.WriteLine("Sorry, but you don't have enough to buy this.");
+
                 return;
             }
-
         }
 
         public int GetPants()
@@ -147,23 +142,23 @@ namespace StoreTA
             return stock[0];
         }
 
-
         public void BuyJacket()
         {
-            if (Player.playerMoney >= 15 + taxsystem1.Tax[0])//check price vs player money
+            if (Player.playerMoney >= 15 + taxsystem1.Tax[0]) //check price vs player money
             {
                 if (Player.pocketSpace > 0)
                 {
-
-
                     Console.WriteLine("Great! That'll be 15 Dollars plus 2 more in Tax, Here is your Jacket!");
+
                     //error message not enough money
                     Player.taxTicket++;
                     Store.storeMoney += 17;
                     Player.currentItems++;
                     Player.pocketSpace--;
                     Player.playerMoney -= 17;
+
                     stock[0]--;
+
                     Console.WriteLine($"You have {Player.playerMoney} Dollars.");
                     Console.WriteLine($"You have {Player.currentItems} items in your inventory. ");
                     Console.WriteLine($"You have {Player.pocketSpace} Pocket Space left. ");
@@ -174,33 +169,36 @@ namespace StoreTA
                 else
                 {
                     Console.WriteLine("Seems like your already carrying too much at the moment.");
+
                     return;
                 }
             }
             else
             {
                 Console.WriteLine("Sorry, but you don't have enough to buy this.");
+
                 return;
             }
         }
         public void BuyJacketTax()
         {
-            if (Player.playerMoney >= 15)//check price vs player money
+            if (Player.playerMoney >= 15) //check price vs player money
             {
                 if (Player.taxTicket >= 1)
                 {
                     if (Player.pocketSpace > 0)
                     {
-
-
                         Console.WriteLine("Ok that will be 15 Dollars.");
+
                         //error message not enough money
                         Player.taxTicket--;
                         Store.storeMoney += 15;
                         Player.currentItems++;
                         Player.pocketSpace--;
                         Player.playerMoney -= 15;
+
                         stock[0]--;
+
                         Console.WriteLine($"You have {Player.playerMoney} Dollars.");
                         Console.WriteLine($"You have {Player.currentItems} items in your inventory. ");
                         Console.WriteLine($"You have {Player.pocketSpace} Pocket Space left. ");
@@ -211,26 +209,29 @@ namespace StoreTA
                     else
                     {
                         Console.WriteLine("Seems like your already carrying too much at the moment.");
+
                         return;
                     }
                 }
                 else
                 {
                     Console.WriteLine("Sorry, but you don't have any tickets to use. Purchase anything with tax to receive a free ticket.");
+
                     return;
                 }
             }
             else
             {
                 Console.WriteLine("Sorry, but you don't have enough to buy this.");
+
                 return;
             }
         }
+
         public int GetJacket()
         {
             return stock[2];
         }
-
 
         public void BuyShoes()
         {
@@ -238,16 +239,16 @@ namespace StoreTA
             {
                 if (Player.pocketSpace > 0)
                 {
-
-
-
                     Console.WriteLine("Great! That'll be 5 Dollars plus 4 more in Tax");
                     Player.taxTicket++;
                     Store.storeMoney += 9;
+
                     stock[2]--;
+
                     Player.playerMoney -= 9;
                     Player.currentItems++;
                     Player.pocketSpace--;
+
                     Console.WriteLine($"You have {Player.playerMoney} Dollars.");
                     Console.WriteLine($"You have {Player.currentItems} items in your inventory. ");
                     Console.WriteLine($"You have {Player.pocketSpace} Pocket Space left. ");
@@ -258,12 +259,14 @@ namespace StoreTA
                 else
                 {
                     Console.WriteLine("Seems like your already carrying too much at the moment.");
+
                     return;
                 }
             }
             else
             {
                 Console.WriteLine("Sorry, but you don't have enough to buy this.");
+
                 return;
             }
         }
@@ -275,15 +278,16 @@ namespace StoreTA
                 {
                     if (Player.pocketSpace > 0)
                     {
-
-
                         Console.WriteLine("Ok that will be 5 Dollars.");
                         Player.taxTicket--;
                         Store.storeMoney += 5;
+
                         stock[2]--;
+
                         Player.playerMoney -= 5;
                         Player.currentItems++;
                         Player.pocketSpace--;
+
                         Console.WriteLine($"You have {Player.playerMoney} Dollars.");
                         Console.WriteLine($"You have {Player.currentItems} items in your inventory. ");
                         Console.WriteLine($"You have {Player.pocketSpace} Pocket Space left. ");
@@ -294,12 +298,14 @@ namespace StoreTA
                     else
                     {
                         Console.WriteLine("Seems like your already carrying too much at the moment.");
+
                         return;
                     }
                 }
                 else
                 {
                     Console.WriteLine("Sorry, but you don't have any tickets to use. Purchase anything with tax to receive a free ticket.");
+
                     return;
                 }
 
@@ -307,16 +313,16 @@ namespace StoreTA
             else
             {
                 Console.WriteLine("Sorry, but you don't have enough to buy this.");
+
                 return;
             }
         }
+
         public int GetShoes()
         {
             return stock[3];
         }
-
     }
-
 
     class Merch : CurrentStock
     {
@@ -346,15 +352,16 @@ namespace StoreTA
             {
                 if (Player.pocketSpace > 0)
                 {
-
-
                     Console.WriteLine("Great! That'll be 15 Dollars plus 2 more in Tax");
                     Player.taxTicket++;
                     Store.storeMoney += 17;
+
                     stock[3]--;
+
                     Player.playerMoney -= 17;
                     Player.currentItems++;
                     Player.pocketSpace--;
+
                     Console.WriteLine($"You have {Player.playerMoney} Dollars.");
                     Console.WriteLine($"You have {Player.currentItems} items in your inventory. ");
                     Console.WriteLine($"You have {Player.pocketSpace} Pocket Space left. ");
@@ -365,15 +372,18 @@ namespace StoreTA
                 else
                 {
                     Console.WriteLine("Seems like your already carrying too much at the moment.");
+
                     return;
                 }
             }
             else
             {
                 Console.WriteLine("Sorry, but you don't have enough to buy this.");
+
                 return;
             }
         }
+
         public void BuyGoldWatchTax()
         {
             if (Player.playerMoney > 15)
@@ -382,15 +392,16 @@ namespace StoreTA
                 {
                     if (Player.pocketSpace > 0)
                     {
-
-
                         Console.WriteLine("Ok that will be 15 Dollars.");
                         Player.taxTicket--;
                         Store.storeMoney += 15;
+
                         stock[3]--;
+
                         Player.playerMoney -= 15;
                         Player.currentItems++;
                         Player.pocketSpace--;
+
                         Console.WriteLine($"You have {Player.playerMoney} Dollars.");
                         Console.WriteLine($"You have {Player.currentItems} items in your inventory. ");
                         Console.WriteLine($"You have {Player.pocketSpace} Pocket Space left. ");
@@ -401,12 +412,14 @@ namespace StoreTA
                     else
                     {
                         Console.WriteLine("Seems like your already carrying too much at the moment.");
+
                         return;
                     }
                 }
                 else
                 {
                     Console.WriteLine("Sorry, but you don't have any tickets to use. Purchase anything with tax to receive a free ticket.");
+
                     return;
                 }
 
@@ -414,6 +427,7 @@ namespace StoreTA
             else
             {
                 Console.WriteLine("Sorry, but you don't have enough to buy this.");
+
                 return;
             }
         }
@@ -429,15 +443,16 @@ namespace StoreTA
             {
                 if (Player.pocketSpace > 0)
                 {
-
-
                     Console.WriteLine("Great! That'll be 10 Dollars plus 3 more in Tax");
                     Player.taxTicket++;
                     Store.storeMoney += 13;
+
                     stock[4]--;
+
                     Player.playerMoney -= 13;
                     Player.currentItems++;
                     Player.pocketSpace--;
+
                     Console.WriteLine($"You have {Player.playerMoney} Dollars.");
                     Console.WriteLine($"You have {Player.currentItems} items in your inventory. ");
                     Console.WriteLine($"You have {Player.pocketSpace} Pocket Space left. ");
@@ -448,12 +463,14 @@ namespace StoreTA
                 else
                 {
                     Console.WriteLine("Seems like your already carrying too much at the moment.");
+
                     return;
                 }
             }
             else
             {
                 Console.WriteLine("Sorry, but you don't have enough to buy this.");
+
                 return;
             }
         }
@@ -463,18 +480,18 @@ namespace StoreTA
             {
                 if (Player.taxTicket >= 1)
                 {
-
                     if (Player.pocketSpace > 0)
                     {
-
-
                         Console.WriteLine("Ok that will be 10 Dollars.");
                         Player.taxTicket--;
                         Store.storeMoney += 10;
+
                         stock[4]--;
+
                         Player.playerMoney -= 10;
                         Player.currentItems++;
                         Player.pocketSpace--;
+
                         Console.WriteLine($"You have {Player.playerMoney} Dollars.");
                         Console.WriteLine($"You have {Player.currentItems} items in your inventory. ");
                         Console.WriteLine($"You have {Player.pocketSpace} Pocket Space left. ");
@@ -485,18 +502,21 @@ namespace StoreTA
                     else
                     {
                         Console.WriteLine("Seems like your already carrying too much at the moment.");
+
                         return;
                     }
                 }
                 else
                 {
                     Console.WriteLine("Sorry, but you don't have any tickets to use. Purchase anything with tax to receive a free ticket.");
+
                     return;
                 }
             }
             else
             {
                 Console.WriteLine("Sorry, but you don't have enough to buy this.");
+
                 return;
             }
         }
@@ -512,15 +532,16 @@ namespace StoreTA
             {
                 if (Player.pocketSpace > 0)
                 {
-
-
                     Console.WriteLine("Great! That'll be 10 Dollars plus 4 more in Tax");
                     Player.taxTicket++;
                     Store.storeMoney += 14;
+
                     stock[5]--;
+
                     Player.playerMoney -= 14;
                     Player.currentItems++;
                     Player.pocketSpace--;
+
                     Console.WriteLine($"You have {Player.playerMoney} Dollars.");
                     Console.WriteLine($"You have {Player.currentItems} items in your inventory. ");
                     Console.WriteLine($"You have {Player.pocketSpace} Pocket Space left. ");
@@ -531,12 +552,14 @@ namespace StoreTA
                 else
                 {
                     Console.WriteLine("Seems like your already carrying too much at the moment.");
+
                     return;
                 }
             }
             else
             {
                 Console.WriteLine("Sorry, but you don't have enough to buy this.");
+
                 return;
             }
         }
@@ -546,18 +569,18 @@ namespace StoreTA
             {
                 if (Player.taxTicket >= 1)
                 {
-
                     if (Player.pocketSpace > 0)
                     {
-
-
                         Console.WriteLine("Ok that will be 10 Dollars.");
                         Player.taxTicket--;
                         Store.storeMoney += 10;
+
                         stock[5]--;
+
                         Player.playerMoney -= 10;
                         Player.currentItems++;
                         Player.pocketSpace--;
+
                         Console.WriteLine($"You have {Player.playerMoney} Dollars.");
                         Console.WriteLine($"You have {Player.currentItems} items in your inventory. ");
                         Console.WriteLine($"You have {Player.pocketSpace} Pocket Space left. ");
@@ -568,18 +591,21 @@ namespace StoreTA
                     else
                     {
                         Console.WriteLine("Seems like your already carrying too much at the moment.");
+
                         return;
                     }
                 }
                 else
                 {
                     Console.WriteLine("Sorry, but you don't have any tickets to use. Purchase anything with tax to receive a free ticket.");
+
                     return;
                 }
             }
             else
             {
                 Console.WriteLine("Sorry, but you don't have enough to buy this.");
+
                 return;
             }
         }
@@ -598,34 +624,37 @@ namespace StoreTA
             stock[7] = 5;//Xbox360
             stock[8] = 7;//Wii
         }
+
         public GConsoles(int PS3, int Xbox360, int Wii)
         {
             stock[6] = PS3;
             stock[7] = Xbox360;
             stock[8] = Wii;
         }
+
         override public void PrintStock()
         {
             Console.WriteLine($"We have PS3s in stock: {stock[6]}");
             Console.WriteLine($"We have Xbox360s in stock: {stock[7]}");
             Console.WriteLine($"We have Wiis in stock: {stock[8]}");
-
         }
+
         public void BuyPS3()
         {
             if (Player.playerMoney >= 20 + taxsystem1.Tax[6])
             {
                 if (Player.pocketSpace > 0)
                 {
-
-
                     Console.WriteLine("Great! That'll be 20 Dollars plus 2 more in Tax");
                     Player.taxTicket++;
                     Store.storeMoney += 22;
+
                     stock[6]--;
+
                     Player.playerMoney -= 22;
                     Player.currentItems++;
                     Player.pocketSpace--;
+
                     Console.WriteLine($"You have {Player.playerMoney} Dollars.");
                     Console.WriteLine($"You have {Player.currentItems} items in your inventory. ");
                     Console.WriteLine($"You have {Player.pocketSpace} Pocket Space left. ");
@@ -636,12 +665,14 @@ namespace StoreTA
                 else
                 {
                     Console.WriteLine("Seems like your already carrying too much at the moment.");
+
                     return;
                 }
             }
             else
             {
                 Console.WriteLine("Sorry, but you don't have enough to buy this.");
+
                 return;
             }
         }
@@ -651,15 +682,14 @@ namespace StoreTA
             {
                 if (Player.taxTicket >= 1)
                 {
-
                     if (Player.pocketSpace > 0)
                     {
-
-
                         Console.WriteLine("Ok that will be 20 Dollars.");
                         Player.taxTicket--;
                         Store.storeMoney += 20;
+
                         stock[6]--;
+
                         Player.playerMoney -= 20;
                         Player.currentItems++;
                         Player.pocketSpace--;
@@ -673,18 +703,21 @@ namespace StoreTA
                     else
                     {
                         Console.WriteLine("Seems like your already carrying too much at the moment.");
+
                         return;
                     }
                 }
                 else
                 {
                     Console.WriteLine("Sorry, but you don't have any tickets to use. Purchase anything with tax to receive a free ticket.");
+
                     return;
                 }
             }
             else
             {
                 Console.WriteLine("Sorry, but you don't have enough to buy this.");
+
                 return;
             }
         }
@@ -700,15 +733,16 @@ namespace StoreTA
             {
                 if (Player.pocketSpace > 0)
                 {
-
-
                     Console.WriteLine("Great! That'll be 25 Dollars plus 3 more in Tax");
                     Player.taxTicket++;
                     Store.storeMoney += 28;
+
                     stock[7]--;
+
                     Player.playerMoney -= 28;
                     Player.currentItems++;
                     Player.pocketSpace--;
+
                     Console.WriteLine($"You have {Player.playerMoney} Dollars.");
                     Console.WriteLine($"You have {Player.currentItems} items in your inventory. ");
                     Console.WriteLine($"You have {Player.pocketSpace} Pocket Space left. ");
@@ -719,33 +753,36 @@ namespace StoreTA
                 else
                 {
                     Console.WriteLine("Seems like your already carrying too much at the moment.");
+
                     return;
                 }
             }
             else
             {
                 Console.WriteLine("Sorry, but you don't have enough to buy this.");
+
                 return;
             }
         }
+
         public void BuyXboxTax()
         {
             if (Player.playerMoney > 25)
             {
                 if (Player.taxTicket >= 1)
                 {
-
                     if (Player.pocketSpace > 0)
                     {
-
-
                         Console.WriteLine("Ok that will be 25 Dollars.");
                         Player.taxTicket--;
                         Store.storeMoney += 25;
+
                         stock[7]--;
+
                         Player.playerMoney -= 25;
                         Player.currentItems++;
                         Player.pocketSpace--;
+
                         Console.WriteLine($"You have {Player.playerMoney} Dollars.");
                         Console.WriteLine($"You have {Player.currentItems} items in your inventory. ");
                         Console.WriteLine($"You have {Player.pocketSpace} Pocket Space left. ");
@@ -756,18 +793,21 @@ namespace StoreTA
                     else
                     {
                         Console.WriteLine("Seems like your already carrying too much at the moment.");
+
                         return;
                     }
                 }
                 else
                 {
                     Console.WriteLine("Sorry, but you don't have any tickets to use. Purchase anything with tax to receive a free ticket.");
+
                     return;
                 }
             }
             else
             {
                 Console.WriteLine("Sorry, but you don't have enough to buy this.");
+
                 return;
             }
         }
@@ -783,15 +823,16 @@ namespace StoreTA
             {
                 if (Player.pocketSpace > 0)
                 {
-
-
                     Console.WriteLine("Great! That'll be 20 Dollars plus 4 more in Tax");
                     Player.taxTicket++;
                     Store.storeMoney += 24;
+
                     stock[8]--;
+
                     Player.playerMoney -= 24;
                     Player.currentItems++;
                     Player.pocketSpace--;
+
                     Console.WriteLine($"You have {Player.playerMoney} Dollars.");
                     Console.WriteLine($"You have {Player.currentItems} items in your inventory. ");
                     Console.WriteLine($"You have {Player.pocketSpace} Pocket Space left. ");
@@ -802,33 +843,36 @@ namespace StoreTA
                 else
                 {
                     Console.WriteLine("Seems like your already carrying too much at the moment.");
+
                     return;
                 }
             }
             else
             {
                 Console.WriteLine("Sorry, but you don't have enough to buy this.");
+
                 return;
             }
         }
+
         public void BuyWiiTax()
         {
             if (Player.playerMoney > 20)
             {
                 if (Player.taxTicket >= 1)
                 {
-
                     if (Player.pocketSpace > 0)
                     {
-
-
                         Console.WriteLine("Ok that will be 20 Dollars.");
                         Player.taxTicket--;
                         Store.storeMoney += 20;
+
                         stock[8]--;
+
                         Player.playerMoney -= 20;
                         Player.currentItems++;
                         Player.pocketSpace--;
+
                         Console.WriteLine($"You have {Player.playerMoney} Dollars.");
                         Console.WriteLine($"You have {Player.currentItems} items in your inventory. ");
                         Console.WriteLine($"You have {Player.pocketSpace} Pocket Space left. ");
@@ -839,18 +883,21 @@ namespace StoreTA
                     else
                     {
                         Console.WriteLine("Seems like your already carrying too much at the moment.");
+
                         return;
                     }
                 }
                 else
                 {
                     Console.WriteLine("Sorry, but you don't have any tickets to use. Purchase anything with tax to receive a free ticket.");
+
                     return;
                 }
             }
             else
             {
                 Console.WriteLine("Sorry, but you don't have enough to buy this.");
+
                 return;
             }
         }
