@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StoreTA
 {
-    class CurrentStock  //This will be the class that declares.
+    class CurrentStock //This will be the class that declares.
     {
         protected int[] stock = new int[9]; //Regular Array with the bag set to int. Protected vars can also be accessed by the children.
                                             // This also declares the vars.
@@ -14,6 +14,141 @@ namespace StoreTA
 
         virtual public void PrintStock() //This is connected to the other children along with the Array above, Also this is another way of calling it Polymorphism.
         {                                //The use of override is Polymorphism, its purpose is to make Parent-Child relationships be more in reach. 
+        }
+
+        virtual public void BuyPants()
+        {
+
+        }
+
+        virtual public void BuyPantsTax()
+        {
+
+        }
+
+        virtual public int GetPants()
+        {
+            return 0;
+        }
+
+        virtual public void BuyJacket()
+        {
+
+        }
+
+        virtual public void BuyJacketTax()
+        {
+
+        }
+
+        virtual public int GetJacket()
+        {
+            return 0;
+        }
+
+        virtual public void BuyShoes()
+        {
+
+        }
+
+        virtual public void BuyShoesTax()
+        {
+
+        }
+
+        virtual public int GetShoes()
+        {
+            return 0;
+        }
+
+        virtual public void BuyGoldWatch()
+        {
+
+        }
+
+        virtual public void BuyGoldWatchTax()
+        {
+
+        }
+
+        virtual public int GetGoldWatch()
+        {
+            return 0;
+        }
+
+        virtual public void BuyScarf()
+        {
+
+        }
+
+        virtual public void BuyScarfTax()
+        {
+
+        }
+
+        virtual public int GetScarf()
+        {
+            return 0;
+        }
+
+        virtual public void BuyTopHat()
+        {
+
+        }
+
+        virtual public void BuyTopHatTax()
+        {
+
+        }
+
+        virtual public int GetTopHat()
+        {
+            return 0;
+        }
+
+        virtual public void BuyPS3()
+        {
+
+        }
+
+        virtual public void BuyPS3Tax()
+        {
+
+        }
+
+        virtual public int GetPS3()
+        {
+            return 0;
+        }
+
+        virtual public void BuyXbox()
+        {
+
+        }
+
+        virtual public void BuyXboxTax()
+        {
+
+        }
+
+        virtual public int GetXbox()
+        {
+            return 0;
+        }
+
+        virtual public void BuyWii()
+        {
+
+        }
+
+        virtual public void BuyWiiTax()
+        {
+
+        }
+
+        virtual public int GetWii()
+        {
+            return 0;
         }
     }
 
@@ -47,7 +182,7 @@ namespace StoreTA
             Console.WriteLine($"Shoes in stock: {stock[2]}");
         }
 
-        public void BuyPants()
+        override public void BuyPants()
         {
             //do stuff to choose pants
             //confirm purchase
@@ -87,7 +222,8 @@ namespace StoreTA
                 return;
             }
         }
-        public void BuyPantsTax()
+
+        override public void BuyPantsTax()
         {
             //do stuff to choose pants
             //confirm purchase
@@ -137,12 +273,12 @@ namespace StoreTA
             }
         }
 
-        public int GetPants()
+        override public int GetPants()
         {
             return stock[0];
         }
 
-        public void BuyJacket()
+        override public void BuyJacket()
         {
             if (Player.playerMoney >= 15 + taxsystem1.Tax[0]) //check price vs player money
             {
@@ -180,7 +316,8 @@ namespace StoreTA
                 return;
             }
         }
-        public void BuyJacketTax()
+
+        override public void BuyJacketTax()
         {
             if (Player.playerMoney >= 15) //check price vs player money
             {
@@ -228,12 +365,12 @@ namespace StoreTA
             }
         }
 
-        public int GetJacket()
+        override public int GetJacket()
         {
             return stock[2];
         }
 
-        public void BuyShoes()
+        override public void BuyShoes()
         {
             if (Player.playerMoney >= 5 + taxsystem1.Tax[2])
             {
@@ -270,7 +407,8 @@ namespace StoreTA
                 return;
             }
         }
-        public void BuyShoesTax()
+
+        override public void BuyShoesTax()
         {
             if (Player.playerMoney > 5)
             {
@@ -318,7 +456,7 @@ namespace StoreTA
             }
         }
 
-        public int GetShoes()
+        override public int GetShoes()
         {
             return stock[3];
         }
@@ -339,6 +477,7 @@ namespace StoreTA
             stock[4] = scarf;
             stock[5] = topHat;
         }
+
         override public void PrintStock()
         {
             Console.WriteLine($"GoldWatches in stock: {stock[3]}");
@@ -346,7 +485,7 @@ namespace StoreTA
             Console.WriteLine($"TopHats in stock: {stock[5]}");
         }
 
-        public void BuyGoldWatch()
+        override public void BuyGoldWatch()
         {
             if (Player.playerMoney >= 15 + taxsystem1.Tax[3])
             {
@@ -384,7 +523,7 @@ namespace StoreTA
             }
         }
 
-        public void BuyGoldWatchTax()
+        override public void BuyGoldWatchTax()
         {
             if (Player.playerMoney > 15)
             {
@@ -432,12 +571,12 @@ namespace StoreTA
             }
         }
 
-        public int GetGoldWatch()
+        override public int GetGoldWatch()
         {
             return stock[3];
         }
 
-        public void BuyScarf()
+        override public void BuyScarf()
         {
             if (Player.playerMoney >= 10 + taxsystem1.Tax[4])
             {
@@ -474,7 +613,8 @@ namespace StoreTA
                 return;
             }
         }
-        public void BuyScarfTax()
+
+        override public void BuyScarfTax()
         {
             if (Player.playerMoney > 10)
             {
@@ -521,12 +661,12 @@ namespace StoreTA
             }
         }
 
-        public int GetScarf()
+        override public int GetScarf()
         {
             return stock[4];
         }
 
-        public void BuyTopHat()
+        override public void BuyTopHat()
         {
             if (Player.playerMoney >= 10 + taxsystem1.Tax[5])
             {
@@ -563,7 +703,8 @@ namespace StoreTA
                 return;
             }
         }
-        public void BuyTopHatTax()
+
+        override public void BuyTopHatTax()
         {
             if (Player.playerMoney > 10)
             {
@@ -610,7 +751,7 @@ namespace StoreTA
             }
         }
 
-        public int GetTopHat()
+        override public int GetTopHat()
         {
             return stock[5];
         }
@@ -639,7 +780,7 @@ namespace StoreTA
             Console.WriteLine($"We have Wiis in stock: {stock[8]}");
         }
 
-        public void BuyPS3()
+        override public void BuyPS3()
         {
             if (Player.playerMoney >= 20 + taxsystem1.Tax[6])
             {
@@ -676,7 +817,8 @@ namespace StoreTA
                 return;
             }
         }
-        public void BuyPS3Tax()
+
+        override public void BuyPS3Tax()
         {
             if (Player.playerMoney > 20)
             {
@@ -722,12 +864,12 @@ namespace StoreTA
             }
         }
 
-        public int GetPS3()
+        override public int GetPS3()
         {
             return stock[6];
         }
 
-        public void BuyXbox()
+        override public void BuyXbox()
         {
             if (Player.playerMoney >= 25 + taxsystem1.Tax[7])
             {
@@ -765,7 +907,7 @@ namespace StoreTA
             }
         }
 
-        public void BuyXboxTax()
+        override public void BuyXboxTax()
         {
             if (Player.playerMoney > 25)
             {
@@ -812,12 +954,12 @@ namespace StoreTA
             }
         }
 
-        public int GetXbox()
+        override public int GetXbox()
         {
             return stock[7];
         }
 
-        public void BuyWii()
+        override public void BuyWii()
         {
             if (Player.playerMoney >= 20 + taxsystem1.Tax[8])
             {
@@ -855,7 +997,7 @@ namespace StoreTA
             }
         }
 
-        public void BuyWiiTax()
+        override public void BuyWiiTax()
         {
             if (Player.playerMoney > 20)
             {
@@ -902,7 +1044,7 @@ namespace StoreTA
             }
         }
 
-        public int GetWii()
+        override public int GetWii()
         {
             return stock[8];
         }

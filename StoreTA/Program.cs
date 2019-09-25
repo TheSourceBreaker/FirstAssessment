@@ -11,31 +11,51 @@ namespace StoreTA
     {
         public static void Main()
         {
-            GConsoles console1 = new GConsoles();
-            Outfits outfits1 = new Outfits(); //This IIIIIIS the reference for non-static fields, methods, and properties   a.k.a an object.
-            Merch merch1 = new Merch();
+            //This IIIIIIS the reference for non-static fields, methods, and properties   a.k.a an object.
+            CurrentStock console1 = new GConsoles();
+            CurrentStock outfits1 = new Outfits(); 
+            CurrentStock merch1 = new Merch();
 
             string name = "";
 
-            StreamReader streamReader = new StreamReader(@"lines.txt");
+            while (!System.IO.File.Exists(@"lines.txt"))
+            {
+                var file = System.IO.File.Create(@"lines.txt");
+                file.Close();
+            }
 
-            name = streamReader.ReadLine();
+            using (StreamReader streamReader = new StreamReader(@"lines.txt"))
+            {
+                name = streamReader.ReadLine();
+                streamReader.Close();
+            }
 
-            Console.WriteLine("What's your name, dear customer?");
+            string result = "";
 
-            name = Console.ReadLine();
+            while (result != "Yes" && result != "yes" && result != "No" && result != "no")
+            {
+                if (name == "" || name == null)
+                {
+                    result = "No";
+                    break;
+                }
 
-            streamReader.Close();
+                Console.WriteLine("Is that you " + name + "? (Yes or No)");
+                result = Console.ReadLine();
+            }
 
-            StreamWriter streamWriter = new StreamWriter(@"lines.txt");
-
-            streamWriter.WriteLine(name);
+            if (result != "Yes" && result != "yes")
+            {
+                Console.WriteLine("What's your name, dear customer?");
+                name = Console.ReadLine();
+                StreamWriter streamWriter = new StreamWriter(@"lines.txt");
+                streamWriter.WriteLine(name);
+                streamWriter.Close();
+            }
 
             Console.WriteLine("");
 
-            streamWriter.Close();
-
-            Console.WriteLine($"Well Hello {name}! and welcome to my Store!");
+            Console.WriteLine($"Well hello {name}! Welcome to my store!");
 
             Console.WriteLine();
 
@@ -188,7 +208,7 @@ namespace StoreTA
                     } else Console.WriteLine("We don't have that here. Please choose something else.");
                 }
 
-                if (read == "gconsole")
+                if (read == "gconsoles" || read == "gconsole")
                 {
                     Console.WriteLine();
                     Console.WriteLine("Ok which one of the three would you like? The PS3, Xbox360, or Wii?");
